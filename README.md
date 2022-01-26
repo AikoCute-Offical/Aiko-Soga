@@ -6,7 +6,7 @@
 
 [Soga backend là một backend hỗ trợ v2ray, Trojan và Shadowsocks cùng lúc. Phiên bản cộng đồng hỗ trợ tối đa 88 người dùng và tối ưu hóa việc sử dụng bộ nhớ dài hạn.](https://github.com/vaxilu/soga)
 
-# ~~ Crack địa chỉ tải xuống tệp nhị phân：[release](https://github.com/herotbty/Soga/releases/tag/2.7.3)~~
+# ~~ Crack địa chỉ tải xuống tệp nhị phân：[release](https://github.com/AikoCute/Soga/releases/tag/2.7.5)~~
 
 ## HOW TO CRACK
 
@@ -35,7 +35,7 @@ Phiên bản này không phải là một bản crack hoàn chỉnh và sẽ đ�
 
 Để kích hoạt phiên bản crack, bạn chỉ cần nhập AikoCuteHotMe tại soga_key, nếu để trống hoặc sai Soga_key thì đó trở về phiên bản gốc.
 ```link Bash
-bash <(curl -Ls https://raw.githubusercontent.com/herotbty/Soga/install/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/soga/master/install.sh)
 ```
 Link Gốc bản Free Giới hạn 88 Người và một mớ giới hạn khác 
 ## hướng dẫn đầy đủ
@@ -45,7 +45,7 @@ Link Gốc bản Free Giới hạn 88 Người và một mớ giới hạn khác
 ## Cài đặt đơn giản < bản Aiko>
 
 ``` bash
-sudo bash < <(curl -Ls https://raw.githubusercontent.com/herotbty/Soga/install/install.sh)
+sudo bash < <(curl -Ls https://raw.githubusercontent.com/Aikocute/Soga/aiko/install.sh)
 ```
 
 ## Cài đặt Docker
