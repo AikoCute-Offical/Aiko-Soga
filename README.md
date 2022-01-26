@@ -49,7 +49,11 @@ sudo bash < <(curl -Ls https://raw.githubusercontent.com/Aikocute/Soga/aiko/inst
 ```
 
 ## Cài đặt Docker
-
+```
+apt update
+sudo bash < <(curl -Ls https://raw.githubusercontent.com/herotbty/Soga/install/install.sh)
+apt install docker.io
+```
 # V2Board
 ``` Docker
 # kéo hình ảnh (AikoCuteHotme)
