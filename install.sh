@@ -250,7 +250,7 @@ install_soga() {
 
     # Writing config.yml
     echo "Đang cố gắng ghi tệp cấu hình ..."
-    wget https://raw.githubusercontent.com/AikoCute/XrayR-release/main/config.yml -O /etc/XrayR/config.yml
+    wget https://raw.githubusercontent.com/AikoCute/Soga/aiko/soga.conf -O /etc/soga/soga.conf
     sed -i "s/ApiHost:.*/ApiHost: ${webapi_url}/g" /etc/soga/soga.conf
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g"  /etc/soga/soga.conf
     sed -i "s/NodeType:.*/NodeType: ${server_type}/g"  /etc/soga/soga.conf
