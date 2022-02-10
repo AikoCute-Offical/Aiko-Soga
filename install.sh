@@ -169,6 +169,97 @@ install_soga() {
     chmod +x /usr/bin/soga
     curl -o /usr/bin/soga-tool -Ls https://raw.githubusercontent.com/AikoCute/Soga/master/soga-tool-${arch}
     chmod +x /usr/bin/soga-tool
+
+    #webtybe
+    echo "Setting Config Aiko XrayR"
+    echo -e "[1] SSpanel"
+    echo -e "[2] V2board"
+    read -p "Web đang sử dụng:" panel_num
+    if [ "$panel_num" == "1" ]; then
+        type="SSpanel"
+    elif [ "$panel_num" == "2" ]; then
+        type="V2board"
+    else
+    if [ ! $node_type ]; then 
+        type="V2board"
+        fi
+    fi
+    echo "---------------------------"
+    echo -e "Bạn dã chọn: ${panel_type}"
+    echo "---------------------------"
+
+    #đặt api hostname
+    echo "Tên trang Web (https://aikocute.com)"
+    echo ""
+    read -p "Nhập tên Web (https://aikocute.com): " webapi_url
+    [ -z "${api_host}" ]
+    if [ $? -eq 0 ]; then
+        webapi_url="https://aikocute.com"
+    fi
+    echo "---------------------------"
+    echo "Trang web của bạn là: ${webapi_url}"
+    echo "---------------------------"
+    echo ""
+
+    #đặt api key
+    echo "webapi_mukey :"
+    echo ""
+    read -p "Nhập API key: " webapi_mukey
+    [ -z "${webapi_mukey}" ]
+    echo "---------------------------"
+    echo "API key của bạn là: ${webapi_mukey}"
+    echo "---------------------------"
+    echo ""
+
+
+    # Đặt số nút
+    echo "Đặt số nút"
+    echo ""
+    read -p "Vui lòng nhập node ID " node_id
+    [ -z "${node_id}" ]
+    echo "---------------------------"
+    echo "Node ID của bạn đặt là: ${node_id}"
+    echo "---------------------------"
+    echo ""
+
+    # Chọn một thỏa thuận
+        echo "Chọn giao thức (V2ray mặc định)"
+        echo ""
+        read -p "Vui lòng nhập giao thức bạn đang sử dụng (V2ray, Shadowsocks, Trojan): " server_type
+        [ -z "${server_type}" ]
+        
+        # Nếu không nhập, mặc định là V2ray
+        if [ ! $nserver_type ]; then 
+        server_type="V2ray"
+        fi
+
+    echo "---------------------------"
+    echo "Giao thức bạn chọn là: ${server_type}"
+    echo "---------------------------"
+    echo ""
+
+    #giới hạn thiết bị
+    echo "Giới hạn thiết bị"
+    echo ""
+    read -p "Vui lòng nhập Số thiết bị tối đa " user_conn_limit
+    [ -z "${user_conn_limit}" ]
+    echo "---------------------------"
+    echo "giới hạn số thiết bị: ${user_conn_limit}"
+    echo "---------------------------"
+    echo ""
+
+    # Writing config.yml
+    echo "Đang cố gắng ghi tệp cấu hình ..."
+    wget https://raw.githubusercontent.com/AikoCute/XrayR-release/main/config.yml -O /etc/XrayR/config.yml
+    sed -i "s/ApiHost:.*/ApiHost: ${webapi_url}/g" /etc/soga/soga.conf
+    sed -i "s/NodeID:.*/NodeID: ${node_id}/g"  /etc/soga/soga.conf
+    sed -i "s/NodeType:.*/NodeType: ${server_type}/g"  /etc/soga/soga.conf
+    sed -i "s/PanelType:.*/PanelType: ${panel_type}/g" /etc/soga/soga.conf
+    sed -i "s/ApiKey:.*/ApiKey: ${webapi_mukey}/g" /etc/soga/soga.conf
+    sed -i "s/DeviceLimit:.*/DeviceLimit: ${user_conn_limit}/g" /etc/soga/soga.conf
+    echo ""
+    echo "Đã hoàn tất, đang cố khởi động lại dịch vụ Soga ..."
+
     echo -e ""
     echo "Cách sử dụng tập lệnh quản lý soga : - Crack By Aiko"
     echo "------------------------------------------"
