@@ -48,7 +48,8 @@ Link Gốc bản Free Giới hạn 88 Người và một mớ giới hạn khác
 Chưa Công Khai nhé
 ```
 
-## Cài đặt Docker
+## Cài đặt Docker Thả rông
+```
 # kéo hình ảnh (AikoCuteHotme)
 docker pull aikocute/aikosoga:latest
 # Chạy hình ảnh, vui lòng tham khảo hướng dẫn riêng của soga để biết thông số. (AikoCutehotme)
@@ -60,7 +61,21 @@ docker run --restart=always --name aikosoga -d -v /etc/soga/:/etc/soga/ --networ
 --webapi_mukey=aikocutehotmeaikocutehotme \
 --soga_key=AikoCuteHotMe \
 --node_id=1
+```
 
+## Cài đặt docker giới hạn người dùng 
+# kéo hình ảnh (AikoCuteHotme)
+docker pull aikocute/aikosoga:latest
+# Chạy hình ảnh, vui lòng tham khảo hướng dẫn riêng của soga để biết thông số. (AikoCutehotme)
+docker run --restart=always --name aikosoga -d -v /etc/soga/:/etc/soga/ --network host aikocute/aikosoga \
+--type=v2board \
+--server_type=v2ray \
+--api=webapi \
+--webapi_url=https://webcuaban.com/ \
+--webapi_mukey=aikocutehotmeaikocutehotme \
+--soga_key=AikoCuteHotMe \
+--user_conn_limit=0 \ #nhập devicelimit tại đây
+--node_id=1
 
 # setting config Soga < tiếng tàu khựa > 
 [ConfigSetting](https://ivpsr.com/235.html)
