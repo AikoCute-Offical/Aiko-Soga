@@ -45,7 +45,7 @@ Link Gốc bản Free Giới hạn 88 Người và một mớ giới hạn khác
 ## Cài đặt đơn giản < bản Aiko>
 
 ``` bash
-Chưa Công Khai nhé
+Chưa Công Khai nhé <Aiko >
 ```
 
 ## Cài đặt Docker Thả rông
