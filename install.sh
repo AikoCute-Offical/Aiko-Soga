@@ -118,7 +118,7 @@ install_soga() {
         fi
     else
         last_version=$1
-        url="https://github.com/AikoCute/Soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz"
+        url="https://github.com/vaxilu/soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz"
         echo -e "bắt đầu cài đặt soga v$1"
         wget -N --no-check-certificate -O /usr/local/soga.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -167,7 +167,7 @@ install_soga() {
     fi
     curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/AikoCute/Soga/aiko/soga.sh
     chmod +x /usr/bin/soga
-    curl -o /usr/bin/soga-tool -Ls https://raw.githubusercontent.com/AikoCute/Soga/master/soga-tool-${arch}
+    curl -o /usr/bin/soga-tool -Ls https://raw.githubusercontent.com/vaxilu/soga/master/soga-tool-${arch}
     chmod +x /usr/bin/soga-tool
     echo -e ""
     echo "Cách sử dụng tập lệnh quản lý soga : - Crack By Aiko"
