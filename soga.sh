@@ -84,7 +84,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Soga/aiko/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/soga/master/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -108,7 +108,7 @@ update() {
 #        fi
 #        return 0
 #    fi
-    bash <(curl -Ls https://raw.githubusercontent.com/AikoCute/Soga/aiko/install.sh) $version
+    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/soga/master/install.sh) $version
     if [[ $? == 0 ]]; then
         echo -e "${green}Cập nhật hoàn tất, soga đã được khởi động lại tự động, vui lòng sử dụng trạng thái soga để kiểm tra trạng thái khởi động${plain}"
         exit
@@ -256,7 +256,7 @@ install_aiko() {
 
 
 update_shell() {
-    wget -O /usr/bin/soga -N --no-check-certificate https://raw.githubusercontent.com/AikoCute/Soga/aiko/soga.sh
+    wget -O /usr/bin/soga -N --no-check-certificate https://github.com/vaxilu/soga/raw/master/soga.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}Không tải được script xuống, vui lòng kiểm tra xem máy có thể kết nối với Github không${plain}"
